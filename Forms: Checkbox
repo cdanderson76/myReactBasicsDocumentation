@@ -1,0 +1,41 @@
+**Forms:  Checkbox**
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+function App() {
+  
+  function grabChecks(formData) {
+    const checks = formData.getAll('diets');
+    console.log(checks);
+  }
+
+  return (
+    <section>
+      <h1>Signup form</h1>
+      <form action={grabChecks}>
+
+        <fieldset>
+          <legend>Dietary restrictions:</legend>
+          <label>
+            <input type="checkbox" name='diets' value='kosher'/>
+            Kosher
+        </label>
+          <label>
+            <input type="checkbox" name='diets' value='Vegan'/>
+            Vegan
+        </label>
+          <label>
+            <input type="checkbox" name='diets' value='Gluten-free'/>
+            Gluten-free
+        </label>
+        </fieldset>
+
+        <button>Submit</button>
+
+      </form>
+    </section>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
