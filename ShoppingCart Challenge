@@ -1,0 +1,8 @@
+import shoppingCart from "./data.js";
+
+function total(arr){
+    const totalFood = arr.reduce((food, currentFood) => food + currentFood.price, 0);
+    return totalFood.toFixed(2);
+}
+
+console.log(total(shoppingCart));
