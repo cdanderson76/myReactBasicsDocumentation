@@ -1,0 +1,19 @@
+const awards = ["🏆", "⭐", "💎", "🥇", "👑"];
+
+function getHosts(data){
+   return data.map(people => people.hosts).flat();
+}
+
+function assignAwards(data){
+    const hosts = getHosts(data);
+    
+    return hosts.map(peeps => {
+        const rand = Math.floor(Math.random() * awards.length);
+        
+        return `${awards[rand]} ${peeps}`;
+    })
+}
+
+
+// console.log(getHosts(podcasts));
+console.log(assignAwards(podcasts));
